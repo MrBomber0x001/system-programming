@@ -23,8 +23,9 @@ int main(int argc, char const *argv[])
 	char buffer[2];
 	ssize_t charCount;
 	while((charCount = read(fdSrcFile, buffer, sizeof(buffer))) != 0){
-		write(fsDstFile, buffer, charCount);
+		write(fdDstFile, buffer, charCount);
 	}
+	remove(argv[1]);
 	return 0;
 
 }
